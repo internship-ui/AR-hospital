@@ -10,7 +10,8 @@ import { apiService } from './services/api';
 import { 
   FALLBACK_DEPARTMENTS, 
   FALLBACK_DOCTORS, 
-  FALLBACK_HOSPITAL_INFO 
+  FALLBACK_HOSPITAL_INFO,
+  FALLBACK_SERVICES
 } from './data/fallbackData';
 
 import { Navbar } from './components/Navbar';
@@ -40,29 +41,22 @@ export function App() {
   const [departments, setDepartments] = useState<Department[]>(FALLBACK_DEPARTMENTS);
   const [doctors, setDoctors] = useState<Doctor[]>(FALLBACK_DOCTORS);
   const [hospitalInfo, setHospitalInfo] = useState<HospitalInfo>(FALLBACK_HOSPITAL_INFO);
-  const [services, setServices] = useState<HospitalService[]>([]);
-  const [serverOnline, setServerOnline] = useState<boolean | null>(null);
+  const [services, setServices] = useState<HospitalService[]>(FALLBACK_SERVICES);
 
-  // Initial Data Fetching from Backend API
+  // Initialize Hospital Data
   useEffect(() => {
     async function initData() {
-      try {
-        const [deptData, docData, infoData, servData] = await Promise.all([
-          apiService.getDepartments().catch(() => FALLBACK_DEPARTMENTS),
-          apiService.getDoctors().catch(() => FALLBACK_DOCTORS),
-          apiService.getHospitalInfo().catch(() => FALLBACK_HOSPITAL_INFO),
-          apiService.getServices().catch(() => [])
-        ]);
+      const [deptData, docData, infoData, servData] = await Promise.all([
+        apiService.getDepartments(),
+        apiService.getDoctors(),
+        apiService.getHospitalInfo(),
+        apiService.getServices()
+      ]);
 
-        if (deptData && deptData.length > 0) setDepartments(deptData);
-        if (docData && docData.length > 0) setDoctors(docData);
-        if (infoData) setHospitalInfo(infoData);
-        if (servData) setServices(servData);
-        setServerOnline(true);
-      } catch (err) {
-        console.warn('Backend server offline, running with certified fallback data:', err);
-        setServerOnline(false);
-      }
+      if (deptData) setDepartments(deptData);
+      if (docData) setDoctors(docData);
+      if (infoData) setHospitalInfo(infoData);
+      if (servData) setServices(servData);
     }
 
     initData();

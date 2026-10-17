@@ -1,43 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=./docs/" />
+    <link rel="icon" type="image/png" href="./ar-hospital-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="./docs/ar-hospital-logo.png" />
-    <title>AR Hospital | Redirecting...</title>
-    <script>
-      window.location.replace("./docs/" + window.location.search + window.location.hash);
-    </script>
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        margin: 0;
-        background-color: #f8fafc;
-        color: #0f172a;
-      }
-      .loader {
-        text-align: center;
-        padding: 2rem;
-      }
-      a {
-        color: #820141;
-        font-weight: 600;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-    </style>
+    <meta name="description" content="AR Hospital - Healing Hands. 24x7 Emergency, Inpatient, Outpatient, ICU, Laboratory, Radiology, Pharmacy and Ambulance healthcare services." />
+    <meta name="keywords" content="AR Hospital, medical care, doctors, appointment booking, cardiology, orthopaedics, paediatrics, surgery, emergency care" />
+    <meta name="theme-color" content="#820141" />
+    <title>AR Hospital | Your Health, Our Priority</title>
   </head>
-  <body>
-    <div class="loader">
-      <h2>Loading AR Hospital Healthcare Portal...</h2>
-      <p>If you are not redirected automatically, <a href="./docs/">click here to proceed</a>.</p>
-    </div>
+  <body class="bg-white text-slate-900 antialiased selection:bg-hospital-pink-200 selection:text-hospital-maroon-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
