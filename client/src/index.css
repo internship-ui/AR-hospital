@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: #111827;
+    background-color: #ffffff;
+  }
+
+  /* Accessibility: Respect user reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-delay: 0s !important;
+      transition-duration: 0s !important;
+    }
+  }
+}
+
+/* Custom AR Hospital UI Utilities */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(252, 231, 236, 0.9);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(130, 1, 65, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.gradient-border-maroon {
+  border-image: linear-gradient(to right, #820141, #a80c55) 1;
+}
+
+.text-gradient-medical {
+  background: linear-gradient(135deg, #820141 0%, #a80c55 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #820141 0%, #d94474 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Medical Pulse Animation for Emergency Alert */
+@keyframes heartPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+.animate-heart-pulse {
+  animation: heartPulse 2s ease-in-out infinite;
+}
+
+/* Custom Scrollbar in AR Hospital Brand Palette */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf2f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #f8ccd6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #820141;
+}
