@@ -13,6 +13,7 @@ import {
   Users
 } from 'lucide-react';
 import { Doctor, Department, PageRoute } from '../types';
+import { getAssetUrl } from '../utils/assets';
 
 interface DoctorsPageProps {
   doctors: Doctor[];
@@ -167,7 +168,7 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
                 {/* Image and Header */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
                   <img
-                    src={doc.image}
+                    src={getAssetUrl(doc.image)}
                     alt={doc.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
@@ -267,7 +268,7 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-white shadow-md flex-shrink-0 bg-slate-100">
                   <img
-                    src={activeDoctorModal.image}
+                    src={getAssetUrl(activeDoctorModal.image)}
                     alt={activeDoctorModal.name}
                     className="w-full h-full object-cover"
                     onError={(e) => {

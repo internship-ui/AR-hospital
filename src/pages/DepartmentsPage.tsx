@@ -13,6 +13,7 @@ import {
   Building2
 } from 'lucide-react';
 import { Department, PageRoute } from '../types';
+import { getAssetUrl, getDepartmentImageUrl } from '../utils/assets';
 
 interface DepartmentsPageProps {
   departments: Department[];
@@ -142,11 +143,11 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({
                 {/* Department Image & Category Badge */}
                 <div className="relative h-48 overflow-hidden bg-slate-100">
                   <img
-                    src={dept.image}
+                    src={getDepartmentImageUrl(dept.id, dept.image)}
                     alt={dept.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80';
+                      (e.target as HTMLImageElement).src = `./departments/${dept.id}.png`;
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
@@ -229,11 +230,11 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({
           <div className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-hospital-maroon-100 overflow-hidden animate-fadeIn">
             <div className="relative h-48 overflow-hidden bg-slate-900">
               <img
-                src={activeModalDepartment.image}
+                src={getDepartmentImageUrl(activeModalDepartment.id, activeModalDepartment.image)}
                 alt={activeModalDepartment.name}
                 className="w-full h-full object-cover opacity-80"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80';
+                  (e.target as HTMLImageElement).src = `./departments/${activeModalDepartment.id}.png`;
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>

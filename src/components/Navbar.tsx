@@ -13,6 +13,7 @@ import {
   Activity
 } from 'lucide-react';
 import { PageRoute, HospitalInfo } from '../types';
+import hospitalLogo from '../assets/ar-hospital-logo.png';
 
 interface NavbarProps {
   currentPage: PageRoute;
@@ -126,10 +127,13 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           <div className="relative w-14 h-14 rounded-full overflow-hidden bg-white border-2 border-rose-300/80 shadow-soft-pink flex items-center justify-center group-hover:scale-105 transition-transform duration-300" style={{boxShadow: '0 0 0 3px rgba(130,1,65,0.12), 0 4px 12px rgba(130,1,65,0.15)'}}>
             <img 
-              src="/ar-hospital-logo.png" 
+              src={hospitalLogo} 
               alt="AR Hospital Logo - Healing Hands" 
               className="w-[140%] h-[140%] object-cover object-top"
               style={{marginTop: '-10%'}}
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = './ar-hospital-logo.png';
+              }}
             />
           </div>
           <div className="ml-3">

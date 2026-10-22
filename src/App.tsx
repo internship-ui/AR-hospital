@@ -13,6 +13,7 @@ import {
   FALLBACK_HOSPITAL_INFO,
   FALLBACK_SERVICES
 } from './data/fallbackData';
+import hospitalBuilding from './assets/ar-hospital-building.jpg';
 
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -107,9 +108,10 @@ export function App() {
         aria-hidden="true"
       >
         <img
-          src="/ar-hospital-building.jpg"
+          src={hospitalBuilding}
           alt=""
           className="h-[120vh] max-w-none object-cover object-center filter contrast-125 grayscale"
+          onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
         />
       </div>
 

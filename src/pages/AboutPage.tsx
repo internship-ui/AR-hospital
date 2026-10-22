@@ -14,6 +14,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { HospitalInfo, PageRoute } from '../types';
+import hospitalBuilding from '../assets/ar-hospital-building.jpg';
 
 interface AboutPageProps {
   onNavigate: (page: PageRoute) => void;
@@ -122,9 +123,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, hospitalInfo }
           <div className="lg:col-span-6">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
               <img
-                src="/ar-hospital-building.jpg"
+                src={hospitalBuilding}
                 alt="AR Hospital Building Campus"
                 className="w-full h-96 object-cover object-center"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = './ar-hospital-building.jpg';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 text-white p-3 rounded-2xl bg-slate-900/60 backdrop-blur-md border border-white/10">

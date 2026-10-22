@@ -21,6 +21,10 @@ import {
   BadgeCheck
 } from 'lucide-react';
 import { Department, Doctor, HospitalInfo, PageRoute } from '../types';
+import hospitalLogo from '../assets/ar-hospital-logo.png';
+import doctorMadhuram from '../assets/dr-madhuram-chowdry.png';
+import hospitalBuilding from '../assets/ar-hospital-building.jpg';
+import { getAssetUrl, getDepartmentImageUrl } from '../utils/assets';
 
 interface HomePageProps {
   onNavigate: (page: PageRoute) => void;
@@ -78,7 +82,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* Official AR Hospital Building Background Watermark */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
           <img
-            src="/ar-hospital-building.jpg"
+            src={hospitalBuilding}
             alt="AR Hospital Building Background Watermark"
             className="w-full h-full object-cover object-top opacity-[0.12] filter contrast-125 mix-blend-multiply scale-105 transform translate-y-[-5%]"
             onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
@@ -174,11 +178,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                 {/* Official AR Hospital Building Image */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] sm:aspect-[4/5] group bg-slate-900">
                   <img
-                    src="/ar-hospital-building.jpg"
+                    src={hospitalBuilding}
                     alt="AR Hospital Building, 22, New Kantharaj Urs Rd, CFTRI layout, Sharadadevi Nagar, Mysuru, 24x7 Emergency and Ambulance"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80';
+                      (e.target as HTMLImageElement).src = './ar-hospital-building.jpg';
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
@@ -199,10 +203,13 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <div className="absolute -bottom-6 -left-6 bg-white p-3.5 rounded-2xl shadow-xl border border-hospital-pink-100 hidden sm:flex items-center space-x-3 animate-float max-w-xs">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-white border border-rose-200 flex-shrink-0" style={{boxShadow:'0 0 0 2px rgba(159,18,57,0.15)'}}>
                     <img 
-                      src="/ar-hospital-logo.png" 
+                      src={hospitalLogo} 
                       alt="AR Hospital Healing Hands"
                       className="w-[140%] h-[140%] object-cover object-top"
                       style={{marginTop:'-10%'}}
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = './ar-hospital-logo.png';
+                      }}
                     />
                   </div>
                   <div>
@@ -385,11 +392,11 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Department Image Banner */}
               <div className="relative h-44 overflow-hidden bg-slate-100">
                 <img
-                  src={dept.image}
+                  src={getDepartmentImageUrl(dept.id, dept.image)}
                   alt={dept.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80';
+                    (e.target as HTMLImageElement).src = `./departments/${dept.id}.png`;
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/20 to-transparent"></div>
@@ -555,7 +562,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             >
               <div className="relative aspect-square overflow-hidden bg-slate-100">
                 <img
-                  src={doc.image}
+                  src={getAssetUrl(doc.image)}
                   alt={doc.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
@@ -770,11 +777,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                 {/* Portrait */}
                 <div className="relative overflow-hidden rounded-[2rem] border-4 border-white shadow-2xl w-72 sm:w-80 lg:w-[380px] aspect-[3/4] bg-gradient-to-b from-rose-50 to-rose-100 group-hover:shadow-[0_30px_60px_rgba(130,1,65,0.25)] transition-shadow duration-500">
                   <img
-                    src="/dr-madhuram-chowdry.png"
+                    src={doctorMadhuram}
                     alt="Dr. Madhuram Chowdry — Founder & Orthopaedic Specialist, AR Hospital"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80';
+                      (e.target as HTMLImageElement).src = './dr-madhuram-chowdry.png';
                     }}
                   />
                   {/* Bottom name overlay */}

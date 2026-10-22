@@ -11,6 +11,7 @@ import {
   Heart
 } from 'lucide-react';
 import { PageRoute, HospitalInfo } from '../types';
+import hospitalLogo from '../assets/ar-hospital-logo.png';
 
 interface FooterProps {
   onNavigate: (page: PageRoute) => void;
@@ -49,10 +50,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
             <div className="flex items-center space-x-3">
               <div className="w-13 h-13 rounded-full overflow-hidden bg-white border border-slate-600 shadow-sm flex items-center justify-center flex-shrink-0" style={{width:'52px',height:'52px',boxShadow:'0 0 0 2px rgba(130,1,65,0.3)'}}>
                 <img 
-                  src="/ar-hospital-logo.png" 
+                  src={hospitalLogo} 
                   alt="AR Hospital Logo - Healing Hands" 
                   className="w-[140%] h-[140%] object-cover object-top"
                   style={{marginTop:'-10%'}}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = './ar-hospital-logo.png';
+                  }}
                 />
               </div>
               <div>
