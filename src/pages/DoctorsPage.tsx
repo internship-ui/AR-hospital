@@ -3,14 +3,13 @@ import {
   Search, 
   GraduationCap, 
   Briefcase, 
-  Clock, 
   MapPin, 
   Calendar, 
   X, 
-  ChevronRight,
-  Filter,
-  CheckCircle,
-  Users
+  ChevronRight, 
+  Filter, 
+  CheckCircle, 
+  Users 
 } from 'lucide-react';
 import { Doctor, Department, PageRoute } from '../types';
 import { getAssetUrl } from '../utils/assets';
@@ -137,7 +136,7 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
         {/* Notice on Doctor Schedules */}
         <div className="mt-4 p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-amber-800 text-xs flex items-center justify-between">
           <span>
-            <strong>Editorial Policy Note:</strong> Doctor designations, qualifications, and OPD timings are editable placeholders designed to showcase institutional capability. Final verification is handled at the AR Hospital reception desk.
+            <strong>Editorial Policy Note:</strong> Doctor designations and qualifications are editable placeholders designed to showcase institutional capability. Final verification is handled at the AR Hospital reception desk.
           </span>
         </div>
       </section>
@@ -202,12 +201,6 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
                     <div className="flex items-center space-x-2 text-xs">
                       <Briefcase className="w-4 h-4 text-hospital-maroon-700 flex-shrink-0" />
                       <span className="font-semibold text-slate-700">{doc.experience}</span>
-                    </div>
-
-                    {/* OPD Timing */}
-                    <div className="flex items-center space-x-2 text-xs">
-                      <Clock className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                      <span className="text-slate-600 font-medium">{doc.timing}</span>
                     </div>
 
                     {/* Location Suite */}
@@ -318,14 +311,6 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
                   <div>
                     <span className="font-bold text-slate-700">Experience: </span>
                     <span className="text-slate-600">{activeDoctorModal.experience}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-2 pt-1 border-t border-hospital-pink-100">
-                  <Clock className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <div>
-                    <span className="font-bold text-slate-700">OPD Consultation Hours: </span>
-                    <span className="text-slate-600">{activeDoctorModal.timing}</span>
                   </div>
                 </div>
 

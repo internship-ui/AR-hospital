@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { 
   Phone, 
-  Clock, 
   MapPin, 
   Calendar, 
   Menu, 
@@ -46,8 +45,8 @@ export const Navbar: React.FC<NavbarProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+18002746774';
-  const officialPhone = hospitalInfo.contact.officialPhonePlaceholder.replace(/[^0-9+]/g, '') || '+15550192834';
+  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
+  const officialPhone = hospitalInfo.contact.officialPhonePlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-sm glass-nav border-b border-hospital-pink-100/70">
@@ -60,6 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-rose-400 mr-1.5 inline-block animate-ping"></span>
               24/7 Emergency Hotline
             </span>
+            
             <a 
               href={`tel:${emergencyPhone}`}
               className="flex items-center text-hospital-pink-200 hover:text-white font-bold transition-colors"
@@ -72,10 +72,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Quick Info & Action Badges */}
           <div className="hidden lg:flex items-center space-x-6 text-slate-300">
-            <div className="flex items-center">
-              <Clock className="w-3.5 h-3.5 mr-1.5 text-hospital-pink-200" />
-              <span>OPD: 08:30 AM - 07:00 PM</span>
-            </div>
             <div className="flex items-center">
               <MapPin className="w-3.5 h-3.5 mr-1.5 text-hospital-pink-200" />
               <a
@@ -119,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* 2. Main Navigation Bar */}
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-x-4">
         {/* Brand Logo */}
         <div 
           onClick={() => handleLinkClick('home')}
@@ -155,14 +151,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center space-x-1">
+        <div className="hidden lg:flex items-center gap-x-1">
           {navLinks.map((link) => {
             const isActive = currentPage === link.page;
             return (
               <button
                 key={link.page}
                 onClick={() => handleLinkClick(link.page)}
-                className={`relative px-3.5 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ${
+                className={`relative whitespace-nowrap px-3 py-2 text-[13px] font-semibold rounded-xl transition-all duration-200 ${
                   isActive
                     ? 'text-hospital-maroon-700 bg-hospital-pink-50 font-bold'
                     : 'text-slate-600 hover:text-hospital-maroon-600 hover:bg-slate-50'
@@ -170,7 +166,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 {link.label}
                 {isActive && (
-                  <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-gradient-to-r from-hospital-maroon-600 via-hospital-maroon-500 to-hospital-pink-400 rounded-full"></span>
+                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-gradient-to-r from-hospital-maroon-600 via-hospital-maroon-500 to-hospital-pink-400 rounded-full"></span>
                 )}
               </button>
             );

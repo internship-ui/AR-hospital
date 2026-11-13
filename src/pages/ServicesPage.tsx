@@ -23,7 +23,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   hospitalInfo,
   onNavigate
 }) => {
-  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+18002746774';
+  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
 
   return (
     <div className="space-y-16 pb-20">

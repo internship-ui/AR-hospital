@@ -18,7 +18,7 @@ export default {
             500: '#a80c55',   // rich crimson maroon
             600: '#820141',   // PRIMARY DEEP MAROON (Direct from AR Hospital Logo)
             700: '#6e0137',   // dark maroon hover
-            800: '#5a012d',   // deep maroon active
+            800: '#5a012d',   // deep maroon active  
             900: '#460123',   // midnight maroon
             950: '#2e0016',   // deepest maroon
           },
@@ -57,13 +57,13 @@ export default {
           blue: {
             50:  '#fdf2f4',
             100: '#fce7ec',
-            200: '#f8ccd6',
+            200: '#f8ccd6', 
             300: '#f19bb0',
             400: '#d94474',
             500: '#a80c55',
             600: '#820141',
             700: '#6e0137',
-            800: '#5a012d',
+            800: '#5a012d', 
             900: '#460123',
             950: '#2e0016',
           },

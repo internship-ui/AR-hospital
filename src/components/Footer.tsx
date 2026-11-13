@@ -19,8 +19,8 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
-  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+18002746774';
-  const officialPhone = hospitalInfo.contact.officialPhonePlaceholder.replace(/[^0-9+]/g, '') || '+15550192834';
+  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
+  const officialPhone = hospitalInfo.contact.officialPhonePlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
 
   const departmentsList = [
     'General Medicine',
@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
     'OMFS Surgery',
     'Neurosurgery',
     'Physiotherapy',
-    'Virology & Infections',
+    'Urology & Infectious Diseases',
     'Pulmonology'
   ];
 
@@ -192,10 +192,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
               </div>
 
               <div className="pt-2 border-t border-slate-800/80 space-y-1.5">
-                <div className="flex items-center text-slate-400">
-                  <Clock className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
-                  <span className="font-semibold text-slate-200">OPD: Mon - Sat 08:30 - 19:00</span>
-                </div>
                 <div className="text-[11px] text-slate-400">
                   Emergency, ICU & Pharmacy open 24/7 round-the-clock.
                 </div>

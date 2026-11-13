@@ -320,7 +320,7 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
                 Hospital Guidelines for Your Visit:
               </span>
               <ul className="list-disc list-inside space-y-1 text-slate-600 pl-1">
-                <li>Please arrive 15 minutes before your time slot to complete quick vitals recording at the OPD triage.</li>
+                <li>Please arrive 15 minutes before your time slot to complete quick vitals recording at the triage desk.</li>
                 <li>Bring your previous medical reports, prescriptions, or imaging files if applicable.</li>
                 <li>In case of emergency symptoms prior to your slot, please report directly to the 24/7 Emergency Wing.</li>
               </ul>

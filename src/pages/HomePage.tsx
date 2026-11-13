@@ -43,7 +43,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   onSelectDepartmentForBooking,
   onSelectDoctorForBooking
 }) => {
-  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+18002746774';
+  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
   const featuredDepartments = departments.slice(0, 6);
   const featuredDoctors = doctors.slice(0, 4);
 
@@ -548,7 +548,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             onClick={() => onNavigate('doctors')}
             className="mt-4 md:mt-0 inline-flex items-center text-sm font-bold text-hospital-maroon-600 hover:text-hospital-maroon-800 group"
           >
-            <span>View All Doctors & OPD Schedules</span>
+            <span>View All Doctors & Specialists</span>
             <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

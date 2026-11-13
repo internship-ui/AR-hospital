@@ -35,8 +35,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ hospitalInfo, onNaviga
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
-  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+18002746774';
-  const officialPhone = hospitalInfo.contact.officialPhonePlaceholder.replace(/[^0-9+]/g, '') || '+15550192834';
+  const emergencyPhone = hospitalInfo.contact.emergencyNumberPlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
+  const officialPhone = hospitalInfo.contact.officialPhonePlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
 
   const validate = (): boolean => {
     const errors: Record<string, string> = {};
@@ -192,7 +192,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({ hospitalInfo, onNaviga
                 </span>
                 <div className="space-y-1 text-slate-600">
                   <p><strong>Emergency & Trauma:</strong> {hospitalInfo.hours.emergency}</p>
-                  <p><strong>Outpatient OPD:</strong> {hospitalInfo.hours.opdConsultations}</p>
                   <p><strong>Central Pharmacy:</strong> {hospitalInfo.hours.pharmacy}</p>
                   <p><strong>Patient Visiting:</strong> {hospitalInfo.hours.visitingHours}</p>
                 </div>
@@ -314,7 +313,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ hospitalInfo, onNaviga
                       type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      placeholder="e.g. OPD Consultation / Health Checkup"
+                      placeholder="e.g. General Consultation / Health Checkup"
                       className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-hospital-maroon-500 focus:ring-2 focus:ring-hospital-pink-100 outline-none transition-all"
                     />
                   </div>

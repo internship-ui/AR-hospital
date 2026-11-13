@@ -69,7 +69,7 @@ export function App() {
       'home': 'AR Hospital | Your Health, Our Priority - Modern Healthcare Portal',
       'about': 'About Us | AR Hospital - Clinical Vision, Mission & Values',
       'departments': 'Medical & Surgical Departments | AR Hospital',
-      'doctors': 'Specialist Doctors & OPD Schedule | AR Hospital',
+      'doctors': 'Specialist Doctors | AR Hospital',
       'services': 'Hospital Services & Critical Care Facilities | AR Hospital',
       'appointments': 'Book an Appointment Online | AR Hospital Patient Desk',
       'contact': 'Contact Us & Emergency Directions | AR Hospital',

@@ -27,6 +27,7 @@ export const DEPARTMENT_IMAGES: Record<string, string> = {
   'neurosurgery': neurosurgery,
   'physiotherapy': physiotherapy,
   'virology': virology,
+  'urology': virology,
   'pulmonology': pulmonology,
 };
 
