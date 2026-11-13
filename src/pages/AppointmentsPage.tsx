@@ -67,7 +67,23 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
     '05:00 PM - 06:30 PM'
   ];
 
-  // Doctors filtered by selected department
+  // Handle department change: updates department and clears doctor selection
+  const handleDepartmentChange = (newDepartmentId: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      departmentId: newDepartmentId,
+      doctorId: '' // Automatically clear previously selected doctor
+    }));
+    if (formErrors.departmentId) {
+      setFormErrors((prev) => {
+        const updated = { ...prev };
+        delete updated.departmentId;
+        return updated;
+      });
+    }
+  };
+
+  // Doctors strictly filtered by selected department
   const filteredDoctors = doctors.filter(
     (doc) => doc.departmentId === formData.departmentId
   );
@@ -83,13 +99,13 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
     }
   }, [initialDepartmentId, initialDoctorId]);
 
-  // If selected department changes and current doctor doesn't belong to it, reset doctor
+  // If selected department changes and previously selected doctor doesn't belong to it, clear doctor
   useEffect(() => {
-    const validDoctor = filteredDoctors.some((d) => d.id === formData.doctorId);
-    if (!validDoctor && filteredDoctors.length > 0) {
-      setFormData((prev) => ({ ...prev, doctorId: filteredDoctors[0].id }));
-    } else if (filteredDoctors.length === 0) {
-      setFormData((prev) => ({ ...prev, doctorId: '' }));
+    if (formData.doctorId) {
+      const validDoctor = filteredDoctors.some((d) => d.id === formData.doctorId);
+      if (!validDoctor) {
+        setFormData((prev) => ({ ...prev, doctorId: '' }));
+      }
     }
   }, [formData.departmentId, filteredDoctors]);
 
@@ -443,9 +459,10 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
                   </label>
                   <select
                     value={formData.departmentId}
-                    onChange={(e) => setFormData({ ...formData, departmentId: e.target.value })}
+                    onChange={(e) => handleDepartmentChange(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-hospital-maroon-500 focus:ring-2 focus:ring-hospital-pink-100 outline-none bg-white font-medium transition-all"
                   >
+                    <option value="">Select Medical Department</option>
                     {departments.map((dept) => (
                       <option key={dept.id} value={dept.id}>
                         {dept.name}
@@ -463,17 +480,31 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
                   </label>
                   <select
                     value={formData.doctorId}
-                    onChange={(e) => setFormData({ ...formData, doctorId: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:border-hospital-maroon-500 focus:ring-2 focus:ring-hospital-pink-100 outline-none bg-white font-medium transition-all"
+                    onChange={(e) => {
+                      setFormData({ ...formData, doctorId: e.target.value });
+                      if (formErrors.doctorId) {
+                        setFormErrors((prev) => {
+                          const updated = { ...prev };
+                          delete updated.doctorId;
+                          return updated;
+                        });
+                      }
+                    }}
+                    className={`w-full px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm focus:border-hospital-maroon-500 focus:ring-2 focus:ring-hospital-pink-100 outline-none bg-white font-medium transition-all ${
+                      formErrors.doctorId ? 'border-red-400 bg-red-50/20' : 'border-slate-200'
+                    }`}
                   >
                     {filteredDoctors.length === 0 ? (
                       <option value="">No specialists registered in this department</option>
                     ) : (
-                      filteredDoctors.map((doc) => (
-                        <option key={doc.id} value={doc.id}>
-                          {doc.name} - {doc.speciality}
-                        </option>
-                      ))
+                      <>
+                        <option value="">Select Consultant / Doctor</option>
+                        {filteredDoctors.map((doc) => (
+                          <option key={doc.id} value={doc.id}>
+                            {doc.name} – {doc.departmentName || departments.find((d) => d.id === doc.departmentId)?.name || ''}
+                          </option>
+                        ))}
+                      </>
                     )}
                   </select>
                   {formErrors.doctorId && (

@@ -411,7 +411,7 @@ export const FALLBACK_DOCTORS: Doctor[] = [
   {
     id: 'doc-gm-02',
     name: 'Dr. Abhilash',
-    speciality: 'General Medicine & ENT',
+    speciality: 'General Medicine',
     departmentId: 'general-medicine',
     departmentName: 'General Medicine',
     qualification: 'MBBS, MD (General Medicine)',
@@ -420,14 +420,14 @@ export const FALLBACK_DOCTORS: Doctor[] = [
     timing: '09:00 AM - 05:00 PM',
     roomNumberPlaceholder: 'General Medicine OPD',
     image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
-    about: 'Dedicated to comprehensive patient care, managing systemic illnesses, and also covering ENT consultations.',
+    about: 'Dedicated physician focused on comprehensive adult healthcare, chronic disease management, and internal medicine.',
     isVerifiedPlaceholder: true,
     languages: ['English', 'Kannada', 'Hindi']
   },
   {
     id: 'doc-ent-01',
     name: 'Dr. Abhilash',
-    speciality: 'ENT - Ear, Nose & Throat',
+    speciality: 'ENT',
     departmentId: 'ent',
     departmentName: 'ENT',
     qualification: 'MBBS, MS (ENT)',

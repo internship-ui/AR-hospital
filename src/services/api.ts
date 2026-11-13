@@ -152,7 +152,8 @@ export const apiService = {
   // Submit Appointment
   async submitAppointment(formData: AppointmentFormData): Promise<{ success: boolean; message: string; booking: Appointment }> {
     const doctors = await this.getDoctors();
-    const doc = doctors.find((d) => d.id === formData.doctorId);
+    const doc = doctors.find((d) => d.id === formData.doctorId && d.departmentId === formData.departmentId) 
+             || doctors.find((d) => d.id === formData.doctorId);
     const doctorName = doc ? doc.name : 'Hospital Specialist';
 
     const depts = await this.getDepartments();
