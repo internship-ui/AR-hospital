@@ -1,4 +1,4 @@
-﻿import { Department, Doctor, HospitalInfo, HospitalService } from '../types';
+import { Department, Doctor, HospitalInfo, HospitalService } from '../types';
 import { DEPARTMENT_IMAGES } from '../assets/departments';
 
 export const FALLBACK_HOSPITAL_INFO: HospitalInfo = {
@@ -153,7 +153,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     description: 'Antenatal care, safe maternity services, adolescent gynaecology, fertility counseling, and minimally invasive gynaecological procedures.',
     iconName: 'HeartHandshake',
     image: DEPARTMENT_IMAGES['gynaecology'] || './departments/gynaecology.png',
-    headOfDepartment: 'Dr. Chandrika',
+    headOfDepartment: 'Dr. Chandrika, Dr. Geetha & Dr. Ashwini',
     keyTreatments: ['Prenatal & Postnatal Care', 'High-Risk Pregnancy Support', 'PCOS & Menstrual Disorders', 'Well-Woman Health Screenings'],
     bedCountPlaceholder: '25 Maternity Beds',
     isVerified: true
@@ -373,6 +373,38 @@ export const FALLBACK_DOCTORS: Doctor[] = [
     roomNumberPlaceholder: 'Gynaecology OPD',
     image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80',
     about: 'Expert in high-risk pregnancy, routine antenatal care, adolescent gynaecology, and menopausal health counseling.',
+    isVerifiedPlaceholder: true,
+    languages: ['English', 'Kannada', 'Hindi']
+  },
+  {
+    id: 'doc-gyn-02',
+    name: 'Dr. Geetha',
+    speciality: 'Gynaecology & Obstetrics',
+    departmentId: 'gynaecology',
+    departmentName: 'Gynecology',
+    qualification: 'MBBS, DGO, MS (Obstetrics & Gynaecology)',
+    experience: 'Gynaecologist & Obstetrician',
+    availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    timing: '09:00 AM - 05:00 PM',
+    roomNumberPlaceholder: 'Gynaecology OPD',
+    image: 'https://images.unsplash.com/photo-1594824813576-0f723689408b?auto=format&fit=crop&w=800&q=80',
+    about: 'Dedicated specialist in maternal care, normal and high-risk deliveries, comprehensive women wellness, and prenatal health.',
+    isVerifiedPlaceholder: true,
+    languages: ['English', 'Kannada', 'Hindi']
+  },
+  {
+    id: 'doc-gyn-03',
+    name: 'Dr. Ashwini',
+    speciality: 'Gynaecology & Obstetrics',
+    departmentId: 'gynaecology',
+    departmentName: 'Gynecology',
+    qualification: 'MBBS, MS (Obstetrics & Gynaecology)',
+    experience: 'Gynaecologist & Obstetrician',
+    availableDays: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    timing: '09:00 AM - 05:00 PM',
+    roomNumberPlaceholder: 'Gynaecology OPD',
+    image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80',
+    about: 'Experienced in reproductive healthcare, PCOS and menstrual disorder management, antenatal care, and preventive gynaecology.',
     isVerifiedPlaceholder: true,
     languages: ['English', 'Kannada', 'Hindi']
   },
