@@ -23,20 +23,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
   const officialPhone = hospitalInfo.contact.officialPhonePlaceholder.replace(/[^0-9+]/g, '') || '+919008994827';
 
   const departmentsList = [
-    'General Medicine',
-    'Cardiology',
     'Orthopaedics',
-    'Paediatrics',
-    'Gynaecology & Obstetrics',
-    'Dermatology',
-    'ENT',
     'General Surgery',
+    'Paediatrics',
     'Intensive Care Unit (ICU)',
     'OMFS Surgery',
     'Neurosurgery',
     'Physiotherapy',
-    'Urology & Infectious Diseases',
-    'Pulmonology'
+    'Urology',
+    'Gynecology',
+    'Dermatology',
+    'General Medicine',
+    'ENT'
   ];
 
   return (

@@ -58,7 +58,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, hospitalInfo }
     {
       year: '[Milestone Year Placeholder]',
       title: 'Expansion of Super-Specialities',
-      description: 'Addition of dedicated Cardiology, Neurosurgery, Pulmonology, and High-Tech Intensive Care Units (ICU & CCU).'
+      description: 'Addition of dedicated Neurosurgery, OMFS Surgery, and High-Tech Intensive Care Units (ICU).'
     },
     {
       year: '[Infrastructure Year Placeholder]',

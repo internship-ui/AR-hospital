@@ -1,5 +1,4 @@
 import generalMedicine from './general-medicine.png';
-import cardiology from './cardiology.jpg';
 import orthopaedics from './orthopaedics.jpg';
 import paediatrics from './paediatrics.jpg';
 import gynaecology from './gynaecology.png';
@@ -11,11 +10,9 @@ import omfsSurgery from './omfs-surgery.png';
 import neurosurgery from './neurosurgery.png';
 import physiotherapy from './physiotherapy.png';
 import virology from './virology.png';
-import pulmonology from './pulmonology.png';
 
 export const DEPARTMENT_IMAGES: Record<string, string> = {
   'general-medicine': generalMedicine,
-  'cardiology': cardiology,
   'orthopaedics': orthopaedics,
   'paediatrics': paediatrics,
   'gynaecology': gynaecology,
@@ -28,7 +25,6 @@ export const DEPARTMENT_IMAGES: Record<string, string> = {
   'physiotherapy': physiotherapy,
   'virology': virology,
   'urology': virology,
-  'pulmonology': pulmonology,
 };
 
 export function getDepartmentImage(id: string, fallbackPath?: string): string {

@@ -52,8 +52,8 @@ export const HomePage: React.FC<HomePageProps> = ({
     {
       id: 1,
       name: 'Sample Patient: Michael D. [Sample Content]',
-      department: 'Cardiology Care',
-      text: 'The emergency stabilization and cardiology team were exceptional. Clear communication and compassionate nursing care throughout my treatment.',
+      department: 'Critical Care & Emergency',
+      text: 'The emergency stabilization and clinical team were exceptional. Clear communication and compassionate nursing care throughout my treatment.',
       rating: 5,
       datePlaceholder: 'Recent Patient Visit'
     },
@@ -482,7 +482,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               {
                 icon: Stethoscope,
                 title: 'Experienced Medical Specialists',
-                desc: 'Qualified consultants with years of specialized practice across medicine, surgery, obstetrics, cardiology, and orthopaedics.',
+                desc: 'Qualified consultants with years of specialized practice across medicine, surgery, obstetrics, and orthopaedics.',
                 color: 'text-hospital-maroon-600 bg-hospital-pink-50 border border-hospital-pink-100'
               },
               {
