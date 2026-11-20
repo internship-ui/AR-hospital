@@ -176,26 +176,37 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 {/* Official AR Hospital Building Image */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[3/4] sm:aspect-[4/5] group bg-slate-900">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[666/782] max-w-md mx-auto group bg-slate-900">
                   <img
                     src={hospitalBuilding}
                     alt="AR Hospital Building, 22, New Kantharaj Urs Rd, CFTRI layout, Sharadadevi Nagar, Mysuru, 24x7 Emergency and Ambulance"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-500"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = './ar-hospital-building.jpg';
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent pointer-events-none"></div>
                   
+                  {/* Subtle Top Status Badge */}
+                  <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 text-white flex items-center space-x-2 shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-rose-200">24x7 Multi-Speciality Facility</span>
+                  </div>
+
                   {/* Floating Caption inside image */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white p-4 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/20 space-y-1">
-                    <div className="flex items-center space-x-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
-                      <span className="text-xs font-bold uppercase tracking-wider text-rose-300">AR Hospital • 24x7 Facility</span>
+                  <div className="absolute bottom-3 left-3 right-3 text-white px-3.5 py-2.5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/20 flex items-center justify-between">
+                    <div>
+                      <div className="flex items-center space-x-1.5">
+                        <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-rose-300">AR Hospital • 24x7 Facility</span>
+                      </div>
+                      <p className="text-[10px] text-slate-200 mt-0.5 truncate max-w-[240px] sm:max-w-xs">
+                        CFTRI layout, Sharadadevi Nagar, Mysuru
+                      </p>
                     </div>
-                    <p className="text-xs text-slate-200">
-                      CFTRI layout, Sharadadevi Nagar, Mysuru • Laboratory, Radiology, Pharmacy 24x7, ICU, Trauma Emergency & Ambulance.
-                    </p>
+                    <span className="text-[10px] font-bold text-white bg-rose-600/90 px-2.5 py-1 rounded-full border border-rose-400/30 whitespace-nowrap hidden sm:inline-block">
+                      Emergency & ICU
+                    </span>
                   </div>
                 </div>
 

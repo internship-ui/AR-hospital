@@ -4,7 +4,6 @@ import {
   ArrowRight, 
   Stethoscope, 
   User, 
-  Bed, 
   CheckCircle2, 
   ChevronRight, 
   Filter,
@@ -168,10 +167,10 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({
                     {dept.description}
                   </p>
 
-                  {/* Treatments list */}
+                  {/* Key Features list */}
                   <div className="space-y-1.5 pt-3 border-t border-slate-100">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-                      Common Conditions & Procedures:
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-hospital-maroon-700 block">
+                      Key Features:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {dept.keyTreatments.map((treatment, i) => (
@@ -185,18 +184,12 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({
                     </div>
                   </div>
 
-                  {/* Head of department & capacity placeholder */}
-                  <div className="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-[11px] text-slate-500">
-                    <div className="flex items-center space-x-1.5">
-                      <User className="w-3.5 h-3.5 text-hospital-maroon-600 flex-shrink-0" />
-                      <span className="truncate" title={dept.headOfDepartment}>
-                        {dept.headOfDepartment}
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-1.5 justify-end">
-                      <Bed className="w-3.5 h-3.5 text-hospital-maroon-700 flex-shrink-0" />
-                      <span>{dept.bedCountPlaceholder}</span>
-                    </div>
+                  {/* Head of department */}
+                  <div className="pt-3 border-t border-slate-100 flex items-center space-x-1.5 text-[11px] text-slate-600">
+                    <User className="w-3.5 h-3.5 text-hospital-maroon-600 flex-shrink-0" />
+                    <span className="truncate font-medium" title={dept.headOfDepartment}>
+                      {dept.headOfDepartment}
+                    </span>
                   </div>
 
                   {/* Card Actions */}
@@ -266,12 +259,12 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({
               </div>
 
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                  Key Treatments & Diagnostic Procedures
+                <h4 className="text-xs font-bold uppercase tracking-wider text-hospital-maroon-700 mb-2">
+                  Key Features
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {activeModalDepartment.keyTreatments.map((t, idx) => (
-                    <div key={idx} className="flex items-center space-x-2 text-xs font-semibold text-slate-700 p-2 rounded-xl bg-slate-50 border border-slate-100">
+                    <div key={idx} className="flex items-center space-x-2 text-xs font-semibold text-slate-700 p-2.5 rounded-xl bg-hospital-pink-50/50 border border-hospital-pink-100">
                       <CheckCircle2 className="w-4 h-4 text-hospital-maroon-600 flex-shrink-0" />
                       <span>{t}</span>
                     </div>
@@ -279,15 +272,9 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-hospital-pink-50/60 border border-hospital-pink-100 grid grid-cols-2 gap-4 text-xs">
-                <div>
-                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Consultant In Charge</span>
-                  <span className="font-semibold text-slate-800">{activeModalDepartment.headOfDepartment}</span>
-                </div>
-                <div>
-                  <span className="text-slate-400 block text-[10px] uppercase font-bold">Bed / Facility Allocation</span>
-                  <span className="font-semibold text-hospital-maroon-800">{activeModalDepartment.bedCountPlaceholder}</span>
-                </div>
+              <div className="p-4 rounded-2xl bg-hospital-pink-50/60 border border-hospital-pink-100 text-xs">
+                <span className="text-slate-400 block text-[10px] uppercase font-bold">Consultant In Charge</span>
+                <span className="font-semibold text-slate-800 text-sm mt-0.5 block">{activeModalDepartment.headOfDepartment}</span>
               </div>
 
               <div className="pt-2 flex justify-end space-x-3">

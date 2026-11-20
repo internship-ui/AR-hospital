@@ -50,7 +50,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Bone',
     image: DEPARTMENT_IMAGES['orthopaedics'] || './departments/orthopaedics.jpg',
     headOfDepartment: 'Dr. Madhuram Chowdry',
-    keyTreatments: ['Fracture Fixation & Trauma Care', 'Joint Pain & Arthritis Clinic', 'Spine Assessment', 'Arthroscopy Evaluation'],
+    keyTreatments: ['Fracture Treatment', 'Joint Replacement', 'Spine Care', 'Sports Injury'],
     bedCountPlaceholder: '20 Beds',
     isVerified: true
   },
@@ -63,7 +63,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Scissors',
     image: DEPARTMENT_IMAGES['general-surgery'] || './departments/general-surgery.png',
     headOfDepartment: 'Dr. Lokesh & Dr. Sachin',
-    keyTreatments: ['Laparoscopic Cholecystectomy', 'Hernia Repair', 'Appendectomy', 'Day Care Surgical Procedures'],
+    keyTreatments: ['Laparoscopic Surgery', 'Emergency Surgery', 'Breast Surgery', 'Hernia Repair Surgery'],
     bedCountPlaceholder: 'Modern Modular OTs',
     isVerified: true
   },
@@ -76,7 +76,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Baby',
     image: DEPARTMENT_IMAGES['paediatrics'] || './departments/paediatrics.jpg',
     headOfDepartment: 'Dr. Banu',
-    keyTreatments: ['Childhood Immunization', 'Newborn & Infant Care', 'Pediatric Allergy & Asthma', 'Growth & Nutrition Screening'],
+    keyTreatments: ['New Born Care and Management', 'Childhood Vaccination', 'Growth and Development Monitoring', 'Treatment of Childhood Illness'],
     bedCountPlaceholder: '15 Beds + NICU',
     isVerified: true
   },
@@ -89,7 +89,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'ShieldAlert',
     image: DEPARTMENT_IMAGES['intensive-care'] || './departments/intensive-care.png',
     headOfDepartment: 'Dr. Krupa Subramanya',
-    keyTreatments: ['Invasive Mechanical Ventilation', 'Continuous Hemodynamic Monitoring', 'Post-Op Critical Care', 'Sepsis & Trauma Resuscitation'],
+    keyTreatments: ['24/7 Critical Care Monitoring', 'Ventilator Support', 'Emergency Life Support', 'Post-Surgical Incentive Care'],
     bedCountPlaceholder: '16 High-Tech ICU Beds',
     isVerified: true
   },
@@ -102,7 +102,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Smile',
     image: DEPARTMENT_IMAGES['omfs-surgery'] || './departments/omfs-surgery.png',
     headOfDepartment: 'Dr. Adarsh Chowdry & Dr. Lakshith Biddappa',
-    keyTreatments: ['Facial Trauma & Fracture Fixation', 'TMJ Disorder Treatment', 'Complex Impactions & Cysts', 'Orthognathic Jaw Correction'],
+    keyTreatments: ['Dental Implant Surgery', 'Jaw Correction Surgery', 'Wisdom Tooth Removal', 'Facial Trauma and Fracture Treatment'],
     bedCountPlaceholder: 'Dedicated OT Slots',
     isVerified: true
   },
@@ -115,7 +115,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Brain',
     image: DEPARTMENT_IMAGES['neurosurgery'] || './departments/neurosurgery.png',
     headOfDepartment: 'Dr. Punith',
-    keyTreatments: ['Head Injury & Trauma Protocol', 'Spine Decompression & Fusion', 'Stroke Thrombolysis Protocol', 'Neuropathic Pain Care'],
+    keyTreatments: ['Brain Tumor Surgery', 'Spine Surgery', 'Head Injury Management', 'Nerve Compression Treatment'],
     bedCountPlaceholder: 'Dedicated Neuro ICU Beds',
     isVerified: true
   },
@@ -128,7 +128,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Activity',
     image: DEPARTMENT_IMAGES['physiotherapy'] || './departments/physiotherapy.png',
     headOfDepartment: 'Dr. Vinod Kumar Seervi',
-    keyTreatments: ['Post-Op Orthopedic Rehabilitation', 'Neurological Rehab & Gait Training', 'Electrotherapy & Ultrasound', 'Chest Physiotherapy'],
+    keyTreatments: ['Pain Management and Relief', 'Post-Surgical Rehabilitation', 'Sports Injury Rehabilitation', 'Stroke Rehabilitation'],
     bedCountPlaceholder: 'Equipped Rehab Center',
     isVerified: true
   },
@@ -141,7 +141,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Shield',
     image: DEPARTMENT_IMAGES['urology'] || './departments/urology.png',
     headOfDepartment: 'Dr. Kiran Shetty',
-    keyTreatments: ['Kidney Stone Management', 'Urinary Tract Infections', 'Laparoscopic Urology', 'Bladder & Prostate Care'],
+    keyTreatments: ['Kidney Stone Treatment', 'UTI Treatment', 'Prostate Disorder Management', 'Laser Stone Surgery'],
     bedCountPlaceholder: '10 Beds',
     isVerified: true
   },
@@ -154,7 +154,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'HeartHandshake',
     image: DEPARTMENT_IMAGES['gynaecology'] || './departments/gynaecology.png',
     headOfDepartment: 'Dr. Chandrika, Dr. Geetha & Dr. Ashwini',
-    keyTreatments: ['Prenatal & Postnatal Care', 'High-Risk Pregnancy Support', 'PCOS & Menstrual Disorders', 'Well-Woman Health Screenings'],
+    keyTreatments: ['Pregnancy Care and Management', 'Normal and High Risk Delivery', 'Infertility Treatment', 'PCOD & PCOS'],
     bedCountPlaceholder: '25 Maternity Beds',
     isVerified: true
   },
@@ -167,7 +167,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Sparkles',
     image: DEPARTMENT_IMAGES['dermatology'] || './departments/dermatology.png',
     headOfDepartment: 'Dr. Pujith',
-    keyTreatments: ['Allergy & Eczema Therapy', 'Acne & Pigmentation Clinic', 'Mole & Skin Lesion Removal', 'Hair Fall & Scalp Assessment'],
+    keyTreatments: ['Acne and Pimple Treatment', 'Skill Allergy Treatment', 'Hair Fall Treatment', 'Dandruff and Scalp Treatment'],
     bedCountPlaceholder: 'Outpatient Facility',
     isVerified: true
   },
@@ -180,7 +180,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Activity',
     image: DEPARTMENT_IMAGES['general-medicine'] || './departments/general-medicine.png',
     headOfDepartment: 'Dr. Jaishankar & Dr. Abhilash',
-    keyTreatments: ['Preventive Health Checkups', 'Hypertension & Diabetes Care', 'Infectious Fever Management', 'Geriatric Care'],
+    keyTreatments: ['Fever and Infection Treatment', 'Diabetes Management', 'Blood Pressure Management', 'Thyroid Disorder Treatment'],
     bedCountPlaceholder: '30 Inpatient Beds',
     isVerified: true
   },
@@ -193,7 +193,7 @@ export const FALLBACK_DEPARTMENTS: Department[] = [
     iconName: 'Stethoscope',
     image: DEPARTMENT_IMAGES['ent'] || './departments/ent.png',
     headOfDepartment: 'Dr. Abhilash',
-    keyTreatments: ['Nasal Endoscopy', 'Audiometry & Hearing Tests', 'Sinusitis & Allergy Management', 'Tympanoplasty & Minor ENT Surgery'],
+    keyTreatments: ['Ear Infection Treatment', 'Hearing Loss Management', 'Sinusitis Treatment', 'Tonsil and Adenoid Treatment'],
     bedCountPlaceholder: '10 Beds',
     isVerified: true
   }
