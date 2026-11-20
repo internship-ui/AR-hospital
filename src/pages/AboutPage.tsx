@@ -9,10 +9,12 @@ import {
   Calendar, 
   Clock, 
   CheckCircle, 
+  CheckCircle2,
   Heart,
   Activity,
   Sparkles,
-  Compass
+  Compass,
+  Quote
 } from 'lucide-react';
 import { HospitalInfo, PageRoute } from '../types';
 import hospitalBuilding from '../assets/ar-hospital-building.jpg';
@@ -147,125 +149,177 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, hospitalInfo }
       </section>
 
       {/* 3. Mission, Vision, Values */}
-      <section className="bg-gradient-to-b from-hospital-pink-50/50 via-white to-hospital-pink-50/30 py-20 border-y border-hospital-pink-100/70 relative overflow-hidden">
-        {/* Subtle decorative background glow circles */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-rose-200/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-hospital-maroon-200/15 rounded-full blur-3xl pointer-events-none translate-y-1/2"></div>
+      <section className="bg-gradient-to-b from-hospital-pink-50/60 via-white to-hospital-pink-50/40 py-24 border-y border-hospital-pink-100/80 relative overflow-hidden">
+        {/* Ambient atmospheric glows */}
+        <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-rose-200/25 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-hospital-maroon-200/20 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold text-hospital-maroon-700 bg-hospital-pink-100/80 px-4 py-1.5 rounded-full uppercase tracking-wider border border-hospital-pink-200 shadow-sm">
-              <Compass className="w-3.5 h-3.5 text-hospital-maroon-700" />
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-hospital-maroon-100/90 to-rose-100/90 border border-hospital-maroon-200 shadow-sm text-hospital-maroon-900 font-bold text-xs tracking-wider uppercase">
+              <Compass className="w-4 h-4 text-hospital-maroon-700" />
               <span>Guiding Principles & Direction</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
               Our Mission & Vision
             </h2>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
               The fundamental core tenets guiding our medical staff, clinical practice, and institutional commitment.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-            {/* Mission Card */}
-            <div className="group relative rounded-3xl bg-white border border-slate-200/90 shadow-card hover:shadow-2xl transition-all duration-300 p-8 sm:p-10 flex flex-col justify-between overflow-hidden hover:-translate-y-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mb-20">
+            {/* 1. Mission Card - Luxury Glass Aesthetic */}
+            <div className="group relative rounded-[2.5rem] bg-white/95 backdrop-blur-xl border-2 border-hospital-maroon-100 shadow-[0_20px_50px_rgba(136,19,55,0.08)] hover:shadow-[0_30px_70px_rgba(136,19,55,0.16)] transition-all duration-500 p-8 sm:p-12 flex flex-col justify-between overflow-hidden hover:-translate-y-2">
               {/* Top Accent Gradient Bar */}
-              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-hospital-maroon-600 via-rose-500 to-hospital-pink-400"></div>
+              <div className="absolute top-0 inset-x-0 h-2.5 bg-gradient-to-r from-hospital-maroon-700 via-rose-500 to-amber-400"></div>
 
-              {/* Decorative Background Icon Watermark */}
-              <div className="absolute -bottom-6 -right-6 text-slate-100 pointer-events-none group-hover:scale-110 transition-transform duration-500">
-                <Target className="w-44 h-44 opacity-25 text-hospital-pink-200" />
-              </div>
+              {/* Watermark Icon */}
+              <Target className="absolute -bottom-10 -right-10 w-56 h-56 text-hospital-pink-100/40 pointer-events-none group-hover:scale-110 group-hover:rotate-12 transition-all duration-700 ease-out" />
 
-              <div className="space-y-6 relative">
-                {/* Header with Icon Badge */}
+              <div className="relative space-y-7">
+                {/* Header with Floating Animated Badge */}
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-hospital-maroon-600 to-hospital-maroon-800 text-white flex items-center justify-center shadow-soft-maroon group-hover:scale-105 transition-transform duration-300">
-                    <Target className="w-7 h-7" />
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-hospital-maroon-600 via-hospital-maroon-700 to-rose-700 text-white flex items-center justify-center shadow-lg shadow-hospital-maroon-600/30 group-hover:scale-110 transition-transform duration-300">
+                      <Target className="w-8 h-8" />
+                    </div>
+                    <span className="absolute -top-1 -right-1 flex h-4 w-4">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-4 w-4 bg-hospital-maroon-600 border-2 border-white"></span>
+                    </span>
                   </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-hospital-maroon-700 bg-hospital-pink-50 px-3.5 py-1 rounded-full border border-hospital-pink-200/80">
-                    Purpose & Commitment
-                  </span>
+                  <div className="inline-flex items-center space-x-1.5 bg-hospital-pink-50 border border-hospital-pink-200 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider text-hospital-maroon-800 shadow-sm">
+                    <Sparkles className="w-3.5 h-3.5 text-hospital-maroon-600" />
+                    <span>Purpose & Commitment</span>
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-hospital-maroon-600 block">The Core Tenet</span>
+                  <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-1">
                     Our Mission
                   </h3>
-                  <div className="w-12 h-1 bg-hospital-maroon-600 rounded-full mt-2"></div>
+                  <div className="w-16 h-1.5 bg-gradient-to-r from-hospital-maroon-600 to-rose-500 rounded-full mt-2.5"></div>
                 </div>
 
-                {/* Text with Highlighted Key Terms */}
-                <p className="text-base text-slate-700 leading-relaxed">
-                  To provide <span className="font-bold text-hospital-maroon-800 bg-hospital-pink-50 px-1.5 py-0.5 rounded border border-hospital-pink-200/60">patient-centered, accessible, and high-quality healthcare services</span> that alleviate illness, protect community health, and nurture healing through <span className="font-bold text-hospital-maroon-700">advanced medicine</span> and <span className="font-bold text-rose-600">heartfelt compassion</span>.
-                </p>
+                {/* Stylized Quote Statement */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-hospital-pink-50/70 via-white to-rose-50/40 border border-hospital-pink-200/80 shadow-sm">
+                  <Quote className="w-8 h-8 text-hospital-maroon-300 mb-2 rotate-180" />
+                  <p className="text-base sm:text-lg text-slate-800 font-medium leading-relaxed italic">
+                    "To provide patient-centered, accessible, and high-quality healthcare services that alleviate illness, protect community health, and nurture healing through advanced medicine and heartfelt compassion."
+                  </p>
+                </div>
 
-                {/* Feature Tags / Key Pillars */}
-                <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center text-xs font-semibold text-slate-700 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <CheckCircle className="w-3.5 h-3.5 text-hospital-maroon-600 mr-1.5" />
-                    Patient-Centered Care
-                  </span>
-                  <span className="inline-flex items-center text-xs font-semibold text-slate-700 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <CheckCircle className="w-3.5 h-3.5 text-hospital-maroon-600 mr-1.5" />
-                    Community Health Protection
-                  </span>
-                  <span className="inline-flex items-center text-xs font-semibold text-slate-700 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <CheckCircle className="w-3.5 h-3.5 text-hospital-maroon-600 mr-1.5" />
-                    Heartfelt Compassion
-                  </span>
+                {/* 3 Visual Pillars */}
+                <div className="space-y-3 pt-2">
+                  <div className="flex items-start space-x-3.5 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 hover:bg-hospital-pink-50/40 hover:border-hospital-pink-200 transition-all duration-300">
+                    <div className="p-2 rounded-xl bg-hospital-maroon-100 text-hospital-maroon-700 flex-shrink-0 mt-0.5">
+                      <HeartHandshake className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Patient-Centered Healing</h4>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">Prioritizing individual comfort, dignity, and personalized emotional support.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3.5 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 hover:bg-hospital-pink-50/40 hover:border-hospital-pink-200 transition-all duration-300">
+                    <div className="p-2 rounded-xl bg-hospital-maroon-100 text-hospital-maroon-700 flex-shrink-0 mt-0.5">
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Advanced Clinical Rigour</h4>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">High diagnostic accuracy, sterile modular OT standards, and evidence-based medicine.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3.5 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 hover:bg-hospital-pink-50/40 hover:border-hospital-pink-200 transition-all duration-300">
+                    <div className="p-2 rounded-xl bg-hospital-maroon-100 text-hospital-maroon-700 flex-shrink-0 mt-0.5">
+                      <Activity className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Community Health Protection</h4>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">24/7 emergency response, critical ICU monitoring, and accessible medical care.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Vision Card */}
-            <div className="group relative rounded-3xl bg-white border border-slate-200/90 shadow-card hover:shadow-2xl transition-all duration-300 p-8 sm:p-10 flex flex-col justify-between overflow-hidden hover:-translate-y-1">
+            {/* 2. Vision Card - Luxury Glass Aesthetic */}
+            <div className="group relative rounded-[2.5rem] bg-white/95 backdrop-blur-xl border-2 border-rose-100 shadow-[0_20px_50px_rgba(244,63,94,0.08)] hover:shadow-[0_30px_70px_rgba(244,63,94,0.16)] transition-all duration-500 p-8 sm:p-12 flex flex-col justify-between overflow-hidden hover:-translate-y-2">
               {/* Top Accent Gradient Bar */}
-              <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 via-hospital-maroon-600 to-hospital-maroon-800"></div>
+              <div className="absolute top-0 inset-x-0 h-2.5 bg-gradient-to-r from-rose-500 via-hospital-maroon-600 to-indigo-600"></div>
 
-              {/* Decorative Background Icon Watermark */}
-              <div className="absolute -bottom-6 -right-6 text-slate-100 pointer-events-none group-hover:scale-110 transition-transform duration-500">
-                <Eye className="w-44 h-44 opacity-25 text-hospital-pink-200" />
-              </div>
+              {/* Watermark Icon */}
+              <Eye className="absolute -bottom-10 -right-10 w-56 h-56 text-rose-100/40 pointer-events-none group-hover:scale-110 group-hover:rotate-12 transition-all duration-700 ease-out" />
 
-              <div className="space-y-6 relative">
-                {/* Header with Icon Badge */}
+              <div className="relative space-y-7">
+                {/* Header with Floating Animated Badge */}
                 <div className="flex items-center justify-between">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-rose-700 text-white flex items-center justify-center shadow-soft-pink group-hover:scale-105 transition-transform duration-300">
-                    <Eye className="w-7 h-7" />
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-500 via-rose-600 to-hospital-maroon-700 text-white flex items-center justify-center shadow-lg shadow-rose-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <Eye className="w-8 h-8" />
+                    </div>
+                    <span className="absolute -top-1 -right-1 flex h-4 w-4">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-hospital-pink-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-4 w-4 bg-rose-600 border-2 border-white"></span>
+                    </span>
                   </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-3.5 py-1 rounded-full border border-rose-200/80">
-                    Long-Term Aspiration
-                  </span>
+                  <div className="inline-flex items-center space-x-1.5 bg-rose-50 border border-rose-200 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider text-rose-800 shadow-sm">
+                    <Award className="w-3.5 h-3.5 text-rose-600" />
+                    <span>Long-Term Aspiration</span>
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-rose-600 block">The Horizon Ahead</span>
+                  <h3 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-1">
                     Our Vision
                   </h3>
-                  <div className="w-12 h-1 bg-rose-600 rounded-full mt-2"></div>
+                  <div className="w-16 h-1.5 bg-gradient-to-r from-rose-600 to-indigo-600 rounded-full mt-2.5"></div>
                 </div>
 
-                {/* Text with Highlighted Key Terms */}
-                <p className="text-base text-slate-700 leading-relaxed">
-                  To stand as a <span className="font-bold text-hospital-maroon-800 bg-hospital-pink-50 px-1.5 py-0.5 rounded border border-hospital-pink-200/60">recognized benchmark in healthcare</span> by consistently modernizing clinical protocols, fostering <span className="font-bold text-hospital-maroon-700">clinical trust</span>, and improving the <span className="font-bold text-rose-600">quality of life</span> for every individual entrusted to our care.
-                </p>
+                {/* Stylized Quote Statement */}
+                <div className="relative p-6 rounded-2xl bg-gradient-to-br from-rose-50/70 via-white to-hospital-pink-50/40 border border-rose-200/80 shadow-sm">
+                  <Quote className="w-8 h-8 text-rose-300 mb-2 rotate-180" />
+                  <p className="text-base sm:text-lg text-slate-800 font-medium leading-relaxed italic">
+                    "To stand as a recognized benchmark in healthcare by consistently modernizing clinical protocols, fostering clinical trust, and improving the quality of life for every individual entrusted to our care."
+                  </p>
+                </div>
 
-                {/* Feature Tags / Key Pillars */}
-                <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center text-xs font-semibold text-slate-700 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <CheckCircle className="w-3.5 h-3.5 text-rose-600 mr-1.5" />
-                    Clinical Trust & Integrity
-                  </span>
-                  <span className="inline-flex items-center text-xs font-semibold text-slate-700 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <CheckCircle className="w-3.5 h-3.5 text-rose-600 mr-1.5" />
-                    Modernized Protocols
-                  </span>
-                  <span className="inline-flex items-center text-xs font-semibold text-slate-700 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
-                    <CheckCircle className="w-3.5 h-3.5 text-rose-600 mr-1.5" />
-                    Recognized Healthcare Benchmark
-                  </span>
+                {/* 3 Visual Pillars */}
+                <div className="space-y-3 pt-2">
+                  <div className="flex items-start space-x-3.5 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 hover:bg-rose-50/40 hover:border-rose-200 transition-all duration-300">
+                    <div className="p-2 rounded-xl bg-rose-100 text-rose-700 flex-shrink-0 mt-0.5">
+                      <Award className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Recognized Healthcare Benchmark</h4>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">Setting gold standards in ethical practice, clinical transparency, and safety.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3.5 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 hover:bg-rose-50/40 hover:border-rose-200 transition-all duration-300">
+                    <div className="p-2 rounded-xl bg-rose-100 text-rose-700 flex-shrink-0 mt-0.5">
+                      <Building2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Modernized Clinical Protocols</h4>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">Embracing surgical precision, modern ICU facilities, and digital patient records.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3.5 p-3.5 rounded-2xl bg-slate-50/90 border border-slate-200/70 hover:bg-rose-50/40 hover:border-rose-200 transition-all duration-300">
+                    <div className="p-2 rounded-xl bg-rose-100 text-rose-700 flex-shrink-0 mt-0.5">
+                      <Heart className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Lifelong Quality of Life</h4>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">Cultivating lasting clinical trust and sustainable wellness across generations.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
