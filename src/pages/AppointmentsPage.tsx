@@ -117,9 +117,9 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
       errors.patientName = 'Please enter patient full name (at least 2 characters).';
     }
 
-    const cleanPhone = formData.phoneNumber.replace(/[\s\-\(\)]/g, '');
-    if (!cleanPhone || !/^\+?[0-9]{7,15}$/.test(cleanPhone)) {
-      errors.phoneNumber = 'Please enter a valid phone number (7 to 15 digits).';
+    const cleanPhone = formData.phoneNumber.replace(/\D/g, '');
+    if (!cleanPhone || !/^[0-9]{10}$/.test(cleanPhone)) {
+      errors.phoneNumber = 'Please enter a valid 10-digit mobile phone number.';
     }
 
     if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
@@ -415,9 +415,12 @@ export const AppointmentsPage: React.FC<AppointmentsPageProps> = ({
                     <Phone className="w-4 h-4 absolute left-3.5 top-3.5 text-slate-400" />
                     <input
                       type="tel"
+                      inputMode="numeric"
+                      maxLength={10}
+                      pattern="[0-9]{10}"
                       value={formData.phoneNumber}
-                      onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                      placeholder="e.g. +1 555 123 4567"
+                      onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value.replace(/\D/g, '').slice(0, 10) })}
+                      placeholder="e.g. 9876543210"
                       className={`w-full pl-10 pr-4 py-2.5 rounded-xl border text-xs sm:text-sm focus:ring-2 focus:ring-hospital-pink-100 outline-none transition-all ${
                         formErrors.phoneNumber ? 'border-red-400 bg-red-50/20' : 'border-slate-200 focus:border-hospital-maroon-500'
                       }`}
