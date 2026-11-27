@@ -1,14 +1,14 @@
 import React from 'react';
-import { 
-  Building2, 
-  Target, 
-  Eye, 
-  HeartHandshake, 
-  ShieldCheck, 
-  Award, 
-  Calendar, 
-  Clock, 
-  CheckCircle, 
+import {
+  Building2,
+  Target,
+  Eye,
+  HeartHandshake,
+  ShieldCheck,
+  Award,
+  Calendar,
+  Clock,
+  CheckCircle,
   CheckCircle2,
   Heart,
   Activity,
@@ -100,7 +100,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, hospitalInfo }
             <div className="inline-flex items-center space-x-2 text-xs font-bold text-hospital-maroon-700 bg-hospital-pink-50 px-3.5 py-1 rounded-full uppercase tracking-wider border border-hospital-pink-200/60 shadow-sm">
               <span>Patient-Care Philosophy</span>
             </div>
-            
+
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
               Committed to Modern Medicine, Grounded in Compassion
             </h2>
@@ -366,7 +366,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, hospitalInfo }
             <div key={idx} className="relative group">
               {/* Dot on line */}
               <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-hospital-maroon-600 border-4 border-white shadow-sm group-hover:scale-125 transition-transform"></div>
-              
+
               <div className="p-6 rounded-3xl bg-white border border-slate-200/80 shadow-card hover:shadow-card-hover transition-all duration-300">
                 <span className="text-xs font-mono font-bold text-hospital-maroon-700 bg-hospital-pink-50 px-3 py-1 rounded-full inline-block mb-2 border border-hospital-pink-100">
                   {m.year}

@@ -10,7 +10,7 @@ export default {
         hospital: {
           // AR Hospital Logo Palette: Deep Maroon (#820141)
           maroon: {
-            50:  '#fdf2f4',   // ultra-soft subtle blush wash
+            50: '#fdf2f4',   // ultra-soft subtle blush wash
             100: '#fce7ec',   // soft pink tint / subtle highlights
             200: '#f8ccd6',   // soft pink border
             300: '#f19bb0',   // rose accent
@@ -24,7 +24,7 @@ export default {
           },
           // Soft Pink for subtle highlights, pill badges, hover states
           pink: {
-            50:  '#fff5f7',
+            50: '#fff5f7',
             100: '#fce7ec',
             200: '#f8ccd6',
             300: '#f19bb0',
@@ -34,7 +34,7 @@ export default {
           },
           // Logo Charcoal Grey (#656565) for secondary text, supporting icons, and borders
           grey: {
-            50:  '#f9fafb',
+            50: '#f9fafb',
             100: '#f3f4f6',
             200: '#e5e7eb',
             300: '#d1d5db',
@@ -46,7 +46,7 @@ export default {
             900: '#111827',
           },
           slate: {
-            50:  '#f8fafc',
+            50: '#f8fafc',
             100: '#f1f5f9',
             200: '#e2e8f0',
             700: '#334155',
@@ -55,20 +55,20 @@ export default {
           },
           // Fallback mappings: Blue/Teal/Cyan mapped directly to Maroon/Pink/Grey to prevent any rogue blue leakage
           blue: {
-            50:  '#fdf2f4',
+            50: '#fdf2f4',
             100: '#fce7ec',
-            200: '#f8ccd6', 
+            200: '#f8ccd6',
             300: '#f19bb0',
             400: '#d94474',
             500: '#a80c55',
             600: '#820141',
             700: '#6e0137',
-            800: '#5a012d', 
+            800: '#5a012d',
             900: '#460123',
             950: '#2e0016',
           },
           teal: {
-            50:  '#fdf2f4',
+            50: '#fdf2f4',
             100: '#fce7ec',
             200: '#f8ccd6',
             300: '#f19bb0',
@@ -80,11 +80,11 @@ export default {
             900: '#460123',
           },
           cyan: {
-            50:  '#fdf2f4',
+            50: '#fdf2f4',
             100: '#fce7ec',
             500: '#a80c55',
             600: '#820141',
-            700: '#6e0137',
+            700: '#6e0137ff',
           }
         }
       },

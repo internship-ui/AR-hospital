@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-  Activity, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Calendar, 
-  ShieldCheck, 
+import {
+  Activity,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Calendar,
+  ShieldCheck,
   ChevronRight,
   Heart
 } from 'lucide-react';
@@ -42,16 +42,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
-          
+
           {/* Column 1: Hospital Overview */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-13 h-13 rounded-full overflow-hidden bg-white border border-slate-600 shadow-sm flex items-center justify-center flex-shrink-0" style={{width:'52px',height:'52px',boxShadow:'0 0 0 2px rgba(130,1,65,0.3)'}}>
-                <img 
-                  src={hospitalLogo} 
-                  alt="AR Hospital Logo - Healing Hands" 
+              <div className="w-13 h-13 rounded-full overflow-hidden bg-white border border-slate-600 shadow-sm flex items-center justify-center flex-shrink-0" style={{ width: '52px', height: '52px', boxShadow: '0 0 0 2px rgba(130,1,65,0.3)' }}>
+                <img
+                  src={hospitalLogo}
+                  alt="AR Hospital Logo - Healing Hands"
                   className="w-[140%] h-[140%] object-cover object-top"
-                  style={{marginTop:'-10%'}}
+                  style={{ marginTop: '-10%' }}
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = './ar-hospital-logo.png';
                   }}
@@ -67,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
                 </span>
               </div>
             </div>
-            
+
             <p className="text-xs text-slate-400 leading-relaxed">
               AR Hospital is committed to delivering state-of-the-art medical excellence, clinical compassion, and patient-first healthcare across specialized inpatient and outpatient care units.
             </p>
@@ -76,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
               <span className="text-[11px] font-bold text-red-400 uppercase tracking-wider block">
                 24/7 Immediate Emergency Service
               </span>
-              <a 
+              <a
                 href={`tel:${emergencyPhone}`}
                 className="text-lg font-black text-white hover:text-red-300 transition-colors flex items-center"
               >
@@ -137,7 +137,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
               {departmentsList.map((dept) => (
                 <li key={dept} className="flex items-center truncate">
                   <span className="w-1.5 h-1.5 rounded-full bg-hospital-maroon-400 mr-2 flex-shrink-0"></span>
-                  <button 
+                  <button
                     onClick={() => {
                       onNavigate('departments');
                       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -171,7 +171,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
 
               <div className="flex items-center space-x-2.5">
                 <Phone className="w-4 h-4 text-hospital-maroon-400 flex-shrink-0" />
-                <a 
+                <a
                   href={`tel:${officialPhone}`}
                   className="hover:text-white transition-colors"
                 >
@@ -181,7 +181,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
 
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-hospital-maroon-400 flex-shrink-0" />
-                <a 
+                <a
                   href={`mailto:${hospitalInfo.contact.emailPlaceholder}`}
                   className="hover:text-white transition-colors"
                 >
@@ -208,21 +208,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hospitalInfo }) => {
           </div>
 
           <div className="flex items-center space-x-6 text-slate-400">
-            <button 
+            <button
               onClick={() => onNavigate('contact')}
               className="hover:text-hospital-pink-300 transition-colors"
             >
               Emergency Helpline
             </button>
             <span>•</span>
-            <button 
+            <button
               onClick={() => onNavigate('appointments')}
               className="hover:text-hospital-pink-300 transition-colors"
             >
               Online Consultation
             </button>
             <span>•</span>
-            <button 
+            <button
               onClick={() => onNavigate('admin')}
               className="hover:text-hospital-pink-300 transition-colors flex items-center"
             >

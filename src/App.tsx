@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  PageRoute, 
-  Department, 
-  Doctor, 
-  HospitalInfo, 
-  HospitalService 
+import {
+  PageRoute,
+  Department,
+  Doctor,
+  HospitalInfo,
+  HospitalService
 } from './types';
 import { apiService } from './services/api';
-import { 
-  FALLBACK_DEPARTMENTS, 
-  FALLBACK_DOCTORS, 
+import {
+  FALLBACK_DEPARTMENTS,
+  FALLBACK_DOCTORS,
   FALLBACK_HOSPITAL_INFO,
   FALLBACK_SERVICES
 } from './data/fallbackData';
@@ -103,7 +103,7 @@ export function App() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900 font-sans antialiased selection:bg-hospital-pink-200 selection:text-hospital-maroon-900 relative">
       {/* Ambient AR Hospital Building Background Watermark */}
-      <div 
+      <div
         className="fixed inset-0 pointer-events-none -z-10 overflow-hidden flex items-center justify-end select-none opacity-[0.04]"
         aria-hidden="true"
       >
