@@ -165,11 +165,11 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
                 className="group bg-white rounded-3xl border border-slate-200/80 hover:border-hospital-pink-300 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col justify-between"
               >
                 {/* Image and Department Badge */}
-                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-gradient-to-b from-slate-50 via-slate-100/60 to-slate-100 flex items-end justify-center pt-4 px-4 pb-0 border-b border-slate-100">
+                <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-gradient-to-b from-slate-50 via-slate-100/60 to-slate-100 border-b border-slate-100">
                   <img
                     src={getAssetUrl(doc.image)}
                     alt={doc.name}
-                    className="w-full h-full object-contain object-bottom group-hover:scale-[1.03] transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80';
                     }}
