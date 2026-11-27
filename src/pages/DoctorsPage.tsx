@@ -164,30 +164,34 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
                 key={doc.id}
                 className="group bg-white rounded-3xl border border-slate-200/80 hover:border-hospital-pink-300 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden flex flex-col justify-between"
               >
-                {/* Image and Header */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                {/* Image and Department Badge */}
+                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-gradient-to-b from-slate-50 via-slate-100/60 to-slate-100 flex items-center justify-center p-3 border-b border-slate-100">
                   <img
                     src={getAssetUrl(doc.image)}
                     alt={doc.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain object-center group-hover:scale-[1.02] transition-transform duration-500"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80';
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
 
                   <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-hospital-maroon-800 shadow-sm border border-hospital-pink-200">
                     {doc.departmentName}
-                  </div>
-
-                  <div className="absolute bottom-3 left-4 right-4 text-white">
-                    <h3 className="text-lg font-bold">{doc.name}</h3>
-                    <p className="text-xs text-hospital-pink-200 font-medium">{doc.speciality}</p>
                   </div>
                 </div>
 
                 {/* Details Section */}
                 <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                  {/* Doctor Name & Speciality Header */}
+                  <div className="border-b border-slate-100 pb-3">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-hospital-maroon-800 transition-colors">
+                      {doc.name}
+                    </h3>
+                    <p className="text-xs text-hospital-maroon-600 font-semibold mt-0.5">
+                      {doc.speciality}
+                    </p>
+                  </div>
+
                   <div className="space-y-2.5">
                     {/* Qualification */}
                     <div className="flex items-start space-x-2 text-xs">
@@ -263,7 +267,7 @@ export const DoctorsPage: React.FC<DoctorsPageProps> = ({
                   <img
                     src={getAssetUrl(activeDoctorModal.image)}
                     alt={activeDoctorModal.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain object-center"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80';
                     }}
